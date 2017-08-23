@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+ <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
+ <title>Wrap</title>
+    <style>
+      #map {
+        width: 50%;
+        height: 250px;
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <header><h1>WRAP</h1></header>
+  <body>
+    <h3>Results</h3>
+<div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat:39.7392, lng:-104.9903};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeda7QdZEcRUVIpdlQD01FR5kJAftfkU0&callback=initMap">
+    </script>
+    <script type=“text/javascript” src=“https://code.jquery.com/jquery-3.2.1.js“></script>
+  <script type="text/javascript"src="js.js" /> </script>
+</body>
+</html>
