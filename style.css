@@ -18,7 +18,7 @@ li{
 h1{
   display: flex;
   font-family: 'Sedgwick Ave Display', cursive;
-  font-size: 40px;
+  font-size: 70px;
   font-weight: bold;
   text-decoration: none;
   display: flex;
@@ -29,18 +29,23 @@ header{
   display: flex;
   justify-content: center;
 }
-h3{
+h4{
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 30px;
+  font-weight: normal;
+}
+h2{
+  text-align: center;
   font-family: 'Sedgwick Ave Display', cursive;
   font-size: 60px;
   font-weight: bold;
   text-decoration: none;
-  justify-content: center;
+
 }
  #map {
   height: 100%;
   margin: 0;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 #autocomplete {
