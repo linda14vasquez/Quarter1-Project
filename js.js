@@ -1,39 +1,8 @@
-var request = $.get('http://www.google.com/maps/embed/v1/place?key=AIzaSyBCivraY-ZHFlAxK88I--tdAA_LO6FFgLQ&q=Planned+Parenthood,Denver+CO', function(data){
-  console.log(data);
-})
-var mapOptions = {
-    center: new google.maps.LatLng(37.7831,-122.4039),
-    zoom: 12,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-};
-
-var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-var acOptions = {
-  types: ['establishment']
-};
+var zipCode = $("#Zipcode")[0];
+var map= $("iframe")[0];
 console.log(map);
-var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
-autocomplete.bindTo('bounds',map);
-var infoWindow = new google.maps.InfoWindow();
-var marker = new google.maps.Marker({
-  map: map
-});
+ zipCode.addEventListener("change", function(e){
+   console.log('test');
+   map.src='https://www.google.com/maps/embed/v1/search?q=Planned+Parenthood+' + zipCode.textContent + '&key=AIzaSyA4IrLIm6WYjQmw2-OML_bwFF1KQEUBQYE';
 
-google.maps.event.addListener(autocomplete, 'place_changed', function() {
-  infoWindow.close();
-  var place = autocomplete.getPlace();
-  if (place.geometry.viewport) {
-    map.fitBounds(place.geometry.viewport);
-  } else {
-    map.setCenter(place.geometry.location);
-    map.setZoom(17);
-  }
-  marker.setPosition(place.geometry.location);
-  infoWindow.setContent('<div><strong>' + place.name + '</strong><br>');
-  infoWindow.open(map, marker);
-  google.maps.event.addListener(marker,'click',function(e){
-
-    infoWindow.open(map, marker);
-
-  });
-});
+ })
